@@ -1,4 +1,4 @@
-```
+```SQL
 CREATE DATABASE BookReviewDB;
 
 USE BookReviewDB;
