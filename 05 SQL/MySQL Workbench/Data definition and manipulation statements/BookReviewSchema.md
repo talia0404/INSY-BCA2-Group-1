@@ -9,11 +9,6 @@ FirstName VARCHAR(100) NOT NULL,
 LastName VARCHAR(100) NOT NULL
 );
 
-INSERT INTO BookReviewUser(FirstName, LastName)
-VALUES
-('Joseph','Smith'
-);
-
 SELECT * FROM BookReviewUser;
 
 CREATE TABLE ReadingList(
@@ -22,17 +17,6 @@ Name VARCHAR(50) NOT NULL,
 UserID1 INT NOT NULL,
 FOREIGN KEY (UserID1) REFERENCES BookReviewUser(UserID)
 );
-
-ALTER TABLE ReadingList
-CHANGE Name ReadingListName VARCHAR(50) NOT NULL;
-
-SELECT * FROM ReadingList
-
-ALTER TABLE ReadingList
-DROP COLUMN ReadingListName
-
-ALTER TABLE ReadingList
-ADD COLUMN ReadingListName VARCHAR(50) NOT NUll
 
 CREATE TABLE Book(
 BookID INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,7 +40,25 @@ FOREIGN KEY (UserID) REFERENCES BookReviewUser(UserID),
 FOREIGN KEY (BookID) REFERENCES Book(BookID)
 );
 
+-- Altering table columns:
+
+ALTER TABLE ReadingList
+CHANGE Name ReadingListName VARCHAR(50) NOT NULL;
+
+SELECT * FROM ReadingList
+
+ALTER TABLE ReadingList
+DROP COLUMN ReadingListName
+
+ALTER TABLE ReadingList
+ADD COLUMN ReadingListName VARCHAR(50) NOT NUll
+
 -- add values/records into the book table and review table
+
+INSERT INTO BookReviewUser(FirstName, LastName)
+VALUES
+('Joseph','Smith'
+);
 
 INSERT INTO ReadingList(ReadingListName, UserID1)
 VALUES
