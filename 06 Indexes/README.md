@@ -7,7 +7,9 @@ Answer the following tasks by writing both the SQL code and explaining your resu
 
 ---
 
-``sql
+
+
+```sql
 CREATE DATABASE AdventureLandDB;
 USE AdventureLandDB;
 
@@ -451,7 +453,7 @@ INSERT INTO RideIncidents (IncidentID, RideID, IncidentType, ReportedAt) VALUES
 (98, 16, 'Safety Check', '2025-05-01 14:38:00'),
 (99, 77, 'Mechanical', '2025-05-01 14:39:00'),
 (100, 27, 'Mechanical', '2025-05-01 14:40:00');
-``
+```
 
 ### **1️⃣ Park Ride Maintenance Lookup**
 
