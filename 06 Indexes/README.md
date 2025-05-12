@@ -465,7 +465,7 @@ Explain how the index helped this query.
 
 ### **2️⃣ Ride Queue Lookup**
 
-**Create a non-clustered index on `RideQueue(RideID)`.**
+**Create a clustered index on `RideQueue(RideID)`.**
 Write a query to show all **Visitors currently queued for a specific RideID** (choose any value).
 Test the query before and after creating the index.
 Describe the difference.
@@ -490,7 +490,7 @@ Explain how the index supports this query.
 
 ### **5️⃣ Index Impact Experiment**
 
-First **create a non-clustered index on `RideQueue(VisitorID)`**, and test a query to show all queues for a specific VisitorID.
+First **create a clustered index on `RideQueue(VisitorID)`**, and test a query to show all queues for a specific VisitorID.
 Then **drop the index**, rerun the query, and describe the performance difference you observe.
 
 ---
