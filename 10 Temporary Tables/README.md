@@ -47,3 +47,47 @@ A **temporary table** is a special type of table in SQL that is created and used
 * To **simplify complex joins or subqueries**.
 * To **improve performance** by storing intermediate results.
 * To **manipulate data temporarily** without affecting the actual database tables.
+
+---
+## Manual Definitions
+
+In SQL, **Manual Definition** of a **temporary table** means that you **explicitly define the table structure** — specifying each column, data type, constraints, and storage engine — before inserting data into it.
+
+### 🧾 Example of Manual Definition:
+
+```sql
+CREATE TEMPORARY TABLE current_season_races (
+    race_id INT AUTO_INCREMENT NOT NULL,
+    racetrack_id INT NOT NULL,
+    name VARCHAR(250) CHARACTER SET utf8mb4 NOT NULL,
+    date DATE NOT NULL,
+    PRIMARY KEY (race_id)
+) ENGINE=MEMORY;
+```
+
+### 🔍 Explanation:
+
+* **You define the columns**: `race_id`, `racetrack_id`, `name`, and `date`.
+* **You set constraints** like `NOT NULL` and `PRIMARY KEY`.
+* You can **control storage** with `ENGINE=MEMORY`, meaning the table exists only in RAM (faster but volatile).
+* This allows **customization** that automatic creation from a query doesn’t allow — such as indexing, character sets, default values, and column order.
+
+---
+
+### 🆚 Comparison
+
+| Method                | Description                                                                 |
+| --------------------- | --------------------------------------------------------------------------- |
+| **Manual Definition** | You write out the full table structure manually.                            |
+| **From Query**        | The table is automatically created based on the result of a `SELECT` query. |
+
+**From Query Example:**
+
+```sql
+CREATE TEMPORARY TABLE current_season_races AS
+SELECT * FROM race WHERE date >= '2020-01-01';
+```
+
+This second version **copies structure and data**, but you **can't control things like types, keys, or engine**.
+
+
